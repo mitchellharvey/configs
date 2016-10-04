@@ -153,11 +153,20 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles
+
+" NERDtree file tree split
 Plugin 'scrooloose/nerdtree' 
+
+" YouCompleteMe auto complete for many languages
+let g:ycm_confirm_extra_conf = 0
+Plugin 'valloric/YouCompleteMe.git'
 
 " End Vundle
 call vundle#end()
 filetype plugin indent on
+
+" YouCompleteMe Config /////////////////////////////////////
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " NERDTREE Config  /////////////////////////////////////////
 

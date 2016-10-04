@@ -164,6 +164,9 @@ filetype plugin indent on
 " Toggle nerd tree on/off
 map <leader>d :NERDTreeToggle<cr>
 
+" Filter these file types from the display
+let NERDTreeIgnore = ['\.o$', '\.pyc$', '\.out$']
+
 " Autostart nerdtree on vim launch
 autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1

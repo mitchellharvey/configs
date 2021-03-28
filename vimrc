@@ -144,3 +144,19 @@ au BufRead,BufNewFile *.rml set filetype=lua
 au BufRead,BufNewFile *.tpl set filetype=html
 au BufRead,BufNewFile *.mm set filetype=cpp
 
+
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" Open the existing NERDTree on each new tab
+autocmd BufWinEnter * silent NERDTreeMirror
+
+" Close vim automaticall when NERDTree is the last window
+" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Bind keys for NERDTree
+noremap <C-f> :NERDTreeFind<CR>
+
+" Update settings based on filetypes
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
